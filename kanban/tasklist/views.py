@@ -1,4 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from .models import TaskItem
+from .serializers import TaskItemSerializer
 
-# Create your views here.
+
+class TaskItemViewset(viewsets.ModelViewSet):
+    queryset = TaskItem.ojbects.all().order_by('priority')
+    serializer_class = TaskItemSerializer

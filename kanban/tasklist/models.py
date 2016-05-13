@@ -30,5 +30,3 @@ class TaskItem(models.Model):
 
     def __str__(self):
         return "{}: {}-{}".format([self.title,STATUS_CHOICES[self.status], self.priority])
-
-    
