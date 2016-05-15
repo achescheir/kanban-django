@@ -5,5 +5,5 @@ from .serializers import TaskItemSerializer
 
 
 class TaskItemViewset(viewsets.ModelViewSet):
-    queryset = TaskItem.ojbects.all().order_by('priority')
+    queryset = TaskItem.objects.all().order_by('priority')
     serializer_class = TaskItemSerializer
