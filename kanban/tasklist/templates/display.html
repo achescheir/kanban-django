@@ -1,31 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
-    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
-    <style>
-      .connectedSortable {
-        border: 1px solid #eee;
-        width: 20%;
-        min-height: 20px;
-        /*list-style-type: none;*/
-        margin: 0;
-        padding: 0 0 0 1em ;
-        float: left;
-        margin-right: 5px;
-      }
-      .connectedSortable li {
-        margin: 0 5px 5px 5px;
-        padding: 5px;
-        font-size: 1em;
-        width: 120px;
-      }
-  </style>
+    <link rel="stylesheet" href="{% static "tasklist/dragAndDrop.css" %}">
   </head>
   <body>
     <ol data-status="BL" class="connectedSortable">
@@ -52,21 +32,8 @@
       <li class="tasks"  data-id="{{item.id}}">{{item.title}}</li>
       {%endfor%}
     </ol>
-    <script type="text/javascript">
-      $( ".connectedSortable" ).sortable({
-        connectWith: ".connectedSortable"
-      });
-      $( ".tasks" ).disableSelection();
-      $( ".connectedSortable" ).droppable({
-        drop: function(event, ui){
-          if ui.draggable.nextElementSibling != null
-          {
-            ui.draggable.put({})
-          }
-
-        }
-      })
-    </script>
-    <!-- <br style="clear:both"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src='{% static "tasklist/dragAndDrop.js" %}'></script>
   </body>
 </html>
