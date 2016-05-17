@@ -17,5 +17,6 @@ from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
-    url(r'^', views.show_lists, name="listview")
+    # url(r'^edit', views.edit_list_items, name="editview"),
+    url(r'^', views.show_lists, name="listview"),
 ]

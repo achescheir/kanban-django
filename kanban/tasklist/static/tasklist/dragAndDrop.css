@@ -14,3 +14,9 @@
   font-size: 1em;
   width: 120px;
 }
+#clearLine {
+  clear: both;
+}
+#taskForm {
+  clear: both;
+}
