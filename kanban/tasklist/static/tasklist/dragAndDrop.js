@@ -1,4 +1,4 @@
-var apiUrl = '//localhost:8000/api/tasks/'
+var apiUrl = '/api/tasks/'
 $( ".connectedSortable" ).sortable({
   connectWith: ".connectedSortable"
 });
@@ -54,7 +54,7 @@ $("#taskForm").submit(function(e){
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://localhost:8000/api/tasks/",
+    "url": apiUrl,
     "method": "POST",
     "headers": {
       "cache-control": "no-cache",
